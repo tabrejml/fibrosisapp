@@ -8,12 +8,12 @@ os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 
 
 
-#@cross_origin()
+@cross_origin()
 class ClientApp:
     def __init__(self):
         self.filename = "inputImage.jpg"
@@ -22,14 +22,14 @@ class ClientApp:
 
 
 @app.route("/", methods=['GET'])
-#@cross_origin()
+@cross_origin()
 def home():
     return render_template('index.html')
     
 
 
 @app.route("/predict", methods=['POST'])
-#@cross_origin()
+@cross_origin()
 def predictRoute():
     image = request.json['image']
     decodeImage(image, clApp.filename)
