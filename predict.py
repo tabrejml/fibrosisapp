@@ -3,13 +3,12 @@
 """
 Created on Fri Mar 20 18:45:05 2020
 
-@author: sudhanshukumar
 """
 
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.preprocessing.image import load_img
+from keras.models import load_model
+from keras.preprocessing import image
+from keras.preprocessing.image import load_img
 
 #from tensorflow.keras.preprocessing.image import img_to_array
 #from tensorflow.keras.models import load_model
