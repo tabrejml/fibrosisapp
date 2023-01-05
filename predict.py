@@ -4,7 +4,7 @@
 Created on Fri Mar 20 18:45:05 2020
 
 """
-
+import urllib.request
 import numpy as np
 from keras.models import load_model
 from keras.preprocessing import image
@@ -16,11 +16,15 @@ from keras.preprocessing import image
 class dogcat:
     def __init__(self,filename):
         self.filename =filename
-
+    @st.experimental_singleton
+    def load_model():
+        if not os.path.isfile('model.h5'):
+            urllib.request.urlretrieve('https://github.com/tabrejml/fibrosisapp/blob/e7609b03b6cbbdc7e5aa619f2aa1d98cd9a8e955/Fibrosis_ResNet19_Model.h5', 'model.h5')
+        return tensorflow.keras.models.load_model('model.h5')
 
     def predictiondogcat(self):
         # load model
-        model = load_model('Fibrosis_ResNet19_Model.h5')
+        model = load_model()
 
         # summarize model
         #model.summary()
