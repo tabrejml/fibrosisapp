@@ -24,7 +24,7 @@ class dogcat:
 
     def predictiondogcat(self):
         # load model
-        model = load_model()
+        model = load_model('Fibrosis_ResNet19_Model.h5')
 
         # summarize model
         #model.summary()
